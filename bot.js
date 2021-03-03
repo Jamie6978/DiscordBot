@@ -11,7 +11,7 @@ const client = new Client({disableEveryone: true })
 
 
 client.on('ready', () => {
-    client.user.setPresence({status: online, game: {name:"Lorenzo pijpen in het vibehouse"}});
+    client.user.setPresence({status: 'online', game: {name:"Lorenzo pijpen in het vibehouse"}});
 })
 
 client.on('message', async message => {
