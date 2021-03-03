@@ -8,6 +8,10 @@ const PREFIX = '$'
 
 const client = new Client({disableEveryone: true })
 
+const status = (process.env.status)
+client.user.setActivity(status, {type: "PLAYING"})
+
+
 client.on('ready', () => console.log("BEN KLAAR VOOR DE GEBRUIK WOLLAH"))
 
 client.on('message', async message => {
