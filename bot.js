@@ -4,7 +4,6 @@ require('nodejs-base64-converter')
 const { Client } = require('discord.js')
 const PREFIX = '$'
 
-client.user.setPresence(status, {type: "PLAYING"})
 
 const client = new Client({disableEveryone: true })
 
@@ -12,7 +11,8 @@ const status = (process.env.status)
 
 
 
-client.on('ready', () => console.log("BEN KLAAR VOOR DE GEBRUIK WOLLAH"))
+client.on('ready', () => {console.log("BEN KLAAR VOOR KANKER GEBRUIK");
+client.login(process.env.TOKEN)}
 
 client.on('message', async message => {
     if(!message.content.startsWith(PREFIX)) return
@@ -28,4 +28,4 @@ client.on('message', async message => {
         }
 })
 
-client.login(process.env.TOKEN)
+client.user.setPresence(status, {type: "PLAYING"})
