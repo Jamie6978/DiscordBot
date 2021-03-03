@@ -4,7 +4,7 @@ require('nodejs-base64-converter')
 const { Client } = require('discord.js')
 const PREFIX = '$'
 
-
+client.user.setPresence(status, {type: "PLAYING"})
 
 const client = new Client({disableEveryone: true })
 
@@ -29,5 +29,3 @@ client.on('message', async message => {
 })
 
 client.login(process.env.TOKEN)
-
-client.user.setPresence(status, {type: "PLAYING"})
