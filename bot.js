@@ -26,6 +26,9 @@ client.on('message', async message => {
         else if (message.content.startsWith(`${PREFIX}dood`)) {
             message.channel.send('Ik ben dood.')
         }
+        else if (message.content.startsWith(`${PREFIX}paraduze`)) {
+            message.channel.send(process.env.para)
+        }
 })
 
 client.login(process.env.TOKEN)
