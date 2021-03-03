@@ -11,7 +11,7 @@ const client = new Client({disableEveryone: true })
 
 
 client.on('ready', () => {
-    client.user.setGame("Lorenzo pijpen")
+    client.user.setPresence({ activity: {name: 'Lorenzo pijpen'}, status: 'dnd '})
 })
 
 client.on('message', async message => {
