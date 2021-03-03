@@ -5,15 +5,14 @@ const { Client } = require('discord.js')
 const PREFIX = '$'
 
 
+
 const client = new Client({disableEveryone: true })
 
-const status = (process.env.status)
 
 
-
-client.on('ready', () => {console.log("BEN KLAAR VOOR KANKER GEBRUIK");
-client.login(process.env.TOKEN);
-});
+client.on('ready', () => {
+    client.user.setPresence({status: online, game: {name:"Lorenzo pijpen in het vibehouse"}});
+})
 
 client.on('message', async message => {
     if(!message.content.startsWith(PREFIX)) return
@@ -29,4 +28,8 @@ client.on('message', async message => {
         }
 })
 
-client.user.setPresence(status, {type: "PLAYING"})
+client.login(process.env.TOKEN)
+
+
+
+
