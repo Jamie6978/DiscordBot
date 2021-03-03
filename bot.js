@@ -12,7 +12,8 @@ const status = (process.env.status)
 
 
 client.on('ready', () => {console.log("BEN KLAAR VOOR KANKER GEBRUIK");
-client.login(process.env.TOKEN)}
+client.login(process.env.TOKEN);
+});
 
 client.on('message', async message => {
     if(!message.content.startsWith(PREFIX)) return
