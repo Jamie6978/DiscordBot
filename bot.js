@@ -29,6 +29,9 @@ client.on('message', async message => {
         else if (message.content.startsWith(`${PREFIX}paraduze`)) {
             message.channel.send(process.env.para)
         }
+        else if (message.content.startsWith(`${PREFIX}salade`)) {
+            message.channel.send(process.env.christiaanmusic)
+        }
 })
 
 client.login(process.env.TOKEN)
