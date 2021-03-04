@@ -1,38 +1,37 @@
 require('dotenv').config()
 require('buffer')
 require('nodejs-base64-converter')
-const { Client } = require('discord.js')
+const { Client, DiscordAPIError } = require('discord.js')
 const PREFIX = '$'
+const fs = require('fs');
+const client = new Discord.Client({disableEveryone: true })
 
 
+client.commands = new Discord.Collection();
 
-const client = new Client({disableEveryone: true })
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
+for (const file of commandFiles){
+    const command = require(`./commands/${file}`)
+
+    client.commands.set(command.name, command)
+}
 
 
+client.on('message', message =>{
+    const args = message.content.slice(PREFIX.length).split(/ +/);
+    const command = args.shift.toLowerCase();
+
+    if (command === 'salade'){
+        client.commands.get('salade').execute(message, args);
+    }
+})
 
 client.on('ready', () => {
     client.user.setActivity('Jade die schreeuwt in het washok', {type: 'LISTENING' })
 })
 
-client.on('message', async message => {
-    if(!message.content.startsWith(PREFIX)) return
-
-    const args = message.content.slice(PREFIX.length).trim().split(' ');
 
 
-    if (message.content.startsWith(`${PREFIX}kanker`)) {
-            message.channel.send(process.env.KANKER)
-        }
-        else if (message.content.startsWith(`${PREFIX}dood`)) {
-            message.channel.send('Ik ben dood.')
-        }
-        else if (message.content.startsWith(`${PREFIX}paraduze`)) {
-            message.channel.send(process.env.para)
-        }
-        else if (message.content.startsWith(`${PREFIX}salade`)) {
-            message.channel.send(process.env.christiaanmusic)
-        }
-})
 
 client.login(process.env.TOKEN)
 
