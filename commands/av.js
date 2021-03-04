@@ -8,7 +8,7 @@ module.exports = {
     * @param {String[]} args 
     */
    run: async(client, message, args)  => {
-       const member = message.mentions.users.first() || message.member;
+       const member = message.mentions.members.first() || message.member;
        message.channel.send(
            new MessageEmbed()
            .setTitle(`${member.user.tag} profiel foto manbro`)
