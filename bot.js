@@ -30,9 +30,6 @@ client.on('message', message =>{
     else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
     }
-    else if (command == 'emoji'){
-        client.commands.get('emoji').run(client, message, args);
-    }
 })
 
 client.on('ready', () => {
