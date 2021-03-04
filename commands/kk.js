@@ -1,7 +1,7 @@
 module.exports = {
     name: 'kanker',
     description: "kanker",
-    execute(message, args){
+    run: async(message, args) => {
         message.channel.send(process.env.KANKER)
     }
 }

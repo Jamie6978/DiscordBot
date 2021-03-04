@@ -26,7 +26,7 @@ client.on('message', message =>{
         client.commands.get('salade').execute(message, args);
     }
     else if (command == 'kk'){
-        client.commands.get('kk').execute(message, args)
+        client.commands.get('kk').run(message, args)
     }
     else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
