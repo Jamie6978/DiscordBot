@@ -19,7 +19,7 @@ for (const file of commandFiles){
 
 client.on('message', message =>{
     const args = message.content.slice(PREFIX.length).split(/ +/);
-    const command = args.shift.toLowerCase();
+    const command = args.shift().toString().toLowerCase();
 
     if (command === 'salade'){
         client.commands.get('salade').execute(message, args);
