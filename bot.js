@@ -1,7 +1,7 @@
 require('dotenv').config()
 require('buffer')
 require('nodejs-base64-converter')
-const { Client, DiscordAPIError } = require('discord.js')
+const Discord = require('discord.js')
 const PREFIX = '$'
 const fs = require('fs');
 const client = new Discord.Client({disableEveryone: true })
