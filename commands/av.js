@@ -3,6 +3,6 @@ module.exports = {
     description: "avatar",
     execute(message, args){
         message.reply(message.author.displayAvatarURL());
-        }
+    }
     
 }
