@@ -11,7 +11,7 @@ module.exports = {
        const member = message.mentions.members.first() || message.member;
        message.channel.send(
            new MessageEmbed()
-           .setTitle(`${member.user.tag} profiel foto manbro`)
+           .setTitle(`profielvoto van ${member.user.tag}`)
            .setImage(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
            .setColor('RANDOM')
        )
