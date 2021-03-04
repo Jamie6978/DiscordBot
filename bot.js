@@ -30,6 +30,9 @@ client.on('message', message =>{
     else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
     }
+    else if (command == 'para'){
+        client.commands.get('para').run(client, message, args);
+    }
 })
 
 client.on('ready', () => {
