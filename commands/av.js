@@ -12,7 +12,7 @@ module.exports = {
        message.channel.send(
            new MessageEmbed()
            .setTitle(`profielvoto van ${member.user.tag}`)
-           .setImage(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
+           .setImage(member.user.displayAvatarURL({ dynamic: true, size: 2048 }))
            .setColor('RANDOM')
        )
 
