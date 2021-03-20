@@ -35,7 +35,7 @@ client.on('message', message =>{
         client.commands.get('para').run(client, message, args);
     }
     else if (command == 'img'){
-        client.commands.get('img').execute(client, message, args);
+        client.commands.get('img').run(client, message, args);
     }
 })
 
