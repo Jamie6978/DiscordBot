@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'renskewap',
+    name: 'duimpie',
     description: "wap",
     execute(message, args){
-        message.channel.send(process.env.renskewap)
+        message.channel.send(process.env.duimpie)
     }
 }
