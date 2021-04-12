@@ -36,9 +36,15 @@ client.on('message', message =>{
     }
 })
 
+let y = process.openStdin()
+y.addListener("data", res => {
+    let x = res.toString.trim().split(/ +/g)
+    client.channels.get("830823998660149258"),send(x.join(" "))
+})
+
 client.on('ready', () => {
     client.user.setActivity('Jade die schreeuwt in het washok', {type: 'LISTENING' })
-})
+});
 
 
 
