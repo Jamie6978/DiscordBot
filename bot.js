@@ -41,6 +41,9 @@ client.on('message', message =>{
     else if(command == 'duimpie'){
         client.commands.get('duimpie').execute(message, args);
     }
+    else if(command == 'catnoir'){
+        client.commands.get('catnoir').execute(message, args);
+    }
 })
 
 let y = process.openStdin()
