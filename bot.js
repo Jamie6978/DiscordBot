@@ -35,6 +35,9 @@ client.on('message', message =>{
     else if (command == 'para'){
         client.commands.get('para').run(client, message, args);
     }
+    else if (command == 'renskewap'){
+        client.commands.get('renskewap').execute(message, args);
+    }
 })
 
 let y = process.openStdin()
