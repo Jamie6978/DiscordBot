@@ -5,6 +5,7 @@ const Discord = require('discord.js')
 const PREFIX = '$'
 const fs = require('fs');
 const client = new Discord.Client({disableEveryone: true })
+client.login(process.env.TOKEN)
 
 
 client.commands = new Discord.Collection();
@@ -38,8 +39,8 @@ client.on('message', message =>{
 
 let y = process.openStdin()
 y.addListener("data", res => {
-    let x = res.toString.trim().split(/ +/g)
-    client.channels.get("830823998660149258"),send(x.join(" "))
+    let x = res.toString().trim().split(/ +/g)
+    client.channels.cache.get(process.env.CHANNEL).send(x.join(" "))
 })
 
 client.on('ready', () => {
@@ -49,7 +50,7 @@ client.on('ready', () => {
 
 
 
-client.login(process.env.TOKEN)
+
 
 
 
