@@ -22,7 +22,7 @@ module.exports = {
         .setBackground("IMAGE", "https://cdn.nos.nl/image/2019/09/02/574461/1024x576a.jpg")
         .setRequiredXP(neededXp)
         .setStatus(message.member.presence.status)
-        .setProgressBar('#1edb14', "COLOR")
+        .setProgressBar('#d90f00', "COLOR")
         .setUsername(message.author.username)
         .setDiscriminator(message.author.discriminator)
         rank.build()
