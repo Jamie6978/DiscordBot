@@ -22,6 +22,7 @@ for (const file of commandFiles){
 
 
 client.on('message', async message =>{
+    if (message.author.bot) return;
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toString().toLowerCase();
 
@@ -29,7 +30,7 @@ client.on('message', async message =>{
     const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
         const user = await levels.fetch(message.author.id, message.guild.id);
-        message.channel.send(`je bent level omhoog manbro! je ben nu level ${user.level}, en hebt ${user.xp}XP!`);
+        message.channel.send(`je bent level omhoog manbro! je ben nu level ${user.level}!`);
     }
 
 
@@ -56,7 +57,7 @@ client.on('message', async message =>{
     }
     else if(command == 'rank'){
         const user = await levels.fetch(message.author.id, message.guild.id);
-        message.channel.send(`je bent nu level ${user.level}!`)
+        message.channel.send(`je bent nu level ${user.level}, en hebt ${user.xp}XP!`)
     }
 })
 
