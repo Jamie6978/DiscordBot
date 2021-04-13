@@ -56,8 +56,7 @@ client.on('message', async message =>{
         client.commands.get('catnoir').execute(message, args);
     }
     else if(command == 'rank'){
-        const user = await levels.fetch(message.author.id, message.guild.id);
-        message.channel.send(`je bent nu level ${user.level}, en hebt ${user.xp}XP!`)
+        client.commands.get('pog').run(client, message,args);
     }
 })
 
