@@ -22,7 +22,6 @@ for (const file of commandFiles){
 
 
 client.on('message', async message =>{
-    if (!message.content.startsWith(PREFIX)) return;
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toString().toLowerCase();
 
