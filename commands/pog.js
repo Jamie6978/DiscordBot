@@ -19,6 +19,8 @@ module.exports = {
         .setAvatar(message.author.displayAvatarURL({dynamic: false, format: 'png' }))
         .setCurrentXP(user.xp)
         .setLevel(user.level)
+        .setRank(user.rank)
+        .setBackground(image, "https://cdn.nos.nl/image/2019/09/02/574461/1024x576a.jpg")
         .setRequiredXP(neededXp)
         .setStatus(message.member.presence.status)
         .setProgressBar('#1edb14', "COLOR")
