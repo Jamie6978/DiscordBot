@@ -31,7 +31,7 @@ client.on('message', async message =>{
     const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
         const user = await levels.fetch(message.author.id, message.guild.id);
-        message.channel.send(`je bent level omhoog manbro! je ben nu level ${user.level}!`);
+        message.channel.send(`je bent level omhoog manbro! je bent nu level ${user.level}!`);
     }
 
 
