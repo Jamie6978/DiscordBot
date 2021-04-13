@@ -56,7 +56,7 @@ client.on('message', async message =>{
         client.commands.get('catnoir').execute(message, args);
     }
     else if(command == 'rank'){
-        client.commands.get('pog').run(client, message,args);
+        client.commands.get('pog').execute(client, message,args);
     }
 })
 
