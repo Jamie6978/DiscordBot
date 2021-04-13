@@ -1,9 +1,15 @@
 const levels = require('discord-xp');
 const canvacord = require('canvacord');
-const Discord = require('discord.js')
+const Discord = require('discord.js');
+const { description } = require('./kk');
+const { name } = require('./salade');
 
 
-module.exports.run = async (client, message, args) => {
+module.exports = {
+
+    name: "rank",
+
+    run: async (client, message, args) => {
     const target = message.author;
 
     const user = await levels.fetch(target.id, message.guild.id);
@@ -24,5 +30,6 @@ module.exports.run = async (client, message, args) => {
     .then(data => {
         const attachment = new Discord.MessageAttachment(data, `kanker.png`)
         message.channel.send(attachment);
-    })
+        })
+    }
 }
