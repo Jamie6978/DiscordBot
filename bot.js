@@ -4,9 +4,12 @@ require('nodejs-base64-converter')
 const Discord = require('discord.js')
 const PREFIX = '$'
 const fs = require('fs');
+const mongo = require('mongoose');
+const levels = require('discord-xp');
 const client = new Discord.Client({disableEveryone: true })
 client.login(process.env.TOKEN)
 
+levels.setURL(process.env.MONGODB)
 
 client.commands = new Discord.Collection();
 
@@ -22,6 +25,14 @@ client.on('message', message =>{
     if (!message.content.startsWith(PREFIX)) return;
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toString().toLowerCase();
+
+    const randomxp = Math.floor(Math.random() * 9) + 1;
+    const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomxp);
+    if (hasLeveledUp) {
+        const user = await levels.fetch(message.author.id, message.guild.id);
+        message.channel.send(`je bent level omhoog manbro! je ben nu level ${user.level}!`);
+    }
+
 
     if (command === 'salade'){
         client.commands.get('salade').execute(message, args);
@@ -43,6 +54,10 @@ client.on('message', message =>{
     }
     else if(command == 'catnoir'){
         client.commands.get('catnoir').execute(message, args);
+    }
+    else if(command == 'rank'){
+        const user = await levels.fetch(message.author.id, message.guild.id);
+        message.channel.send(`je bent nu level ${user.level}!`)
     }
 })
 

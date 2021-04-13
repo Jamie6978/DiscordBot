@@ -11,9 +11,12 @@
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
     "buffer": "^6.0.3",
+    "discord-xp": "^1.1.14",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.12.3",
     "nodejs-base64-converter": "^1.0.5",
     "opusscript": "0.0.7",
     "ytdl-core": "^4.4.5"
