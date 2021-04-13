@@ -62,7 +62,7 @@ client.on('message', async message =>{
         const rawLeaderboard = await levels.fetchLeaderboard(message.guild.id, 10)
         const leaderboard = await levels.computeLeaderboard(client, rawLeaderboard)
         const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}`);
-        message.channel.send(`${lb.join("\n\n")}}`)
+        message.channel.send(`${lb.join("\n\n")}`)
     }
 })
 
