@@ -26,8 +26,8 @@ client.on('message', async message =>{
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toString().toLowerCase();
 
-    const randomxp = Math.floor(Math.random() * 9) + 1;
-    const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomxp);
+    const randomXP = Math.floor(Math.random() * 9) + 1;
+    const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
         const user = await levels.fetch(message.author.id, message.guild.id);
         message.channel.send(`je bent level omhoog manbro! je ben nu level ${user.level}!`);
