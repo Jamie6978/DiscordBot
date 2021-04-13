@@ -3,7 +3,7 @@ const canvacord = require('canvacord');
 const Discord = require('discord.js')
 
 
-module.exports.run async (client, message, args) => {
+module.exports.run = async (client, message, args) => {
     const target = message.author;
 
     const user = await levels.fetch(target.id, message.guild.id);
