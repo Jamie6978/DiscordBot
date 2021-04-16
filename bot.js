@@ -41,17 +41,8 @@ client.on('message', async message =>{
     else if (command == '$kk'){
         client.commands.get('kk').run(message, args)
     }
-    else if (command == '$av'){
+    else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
-    }
-    else if (command == '$para'){
-        client.commands.get('para').run(client, message, args);
-    }
-    else if (command == '$renskewap'){
-        client.commands.get('renskewap').execute(message, args);
-    }
-    else if(command == '$duimpie'){
-        client.commands.get('duimpie').execute(message, args);
     }
     else if(command == '$catnoir'){
         client.commands.get('catnoir').execute(message, args);
