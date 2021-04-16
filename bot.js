@@ -59,6 +59,13 @@ client.on('message', async message =>{
     else if(command == 'rank'){
         client.commands.get('pog').run(client, message, args);
     }
+    else if(command == 'kiss') {
+        client.commands.get('kiss').run(client, message, args);
+    }
+    else if(command == 'kyenna') {
+        client.commands.get('kyenna').run(client, message , args);
+    }
+
     else if (command == 'lb' || command == 'leaderboard') {
         const rawLeaderboard = await levels.fetchLeaderboard(message.guild.id, 10)
         const leaderboard = await levels.computeLeaderboard(client, rawLeaderboard)
