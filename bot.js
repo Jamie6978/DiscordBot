@@ -25,7 +25,7 @@ client.on('message', async message =>{
     if (message.author.bot) return;
     if (message.content.startsWith(',', '!', PREFIX)) return;
     const args = message.content.slice(PREFIX.length).split(/ +/);
-    const command = message.shift().toString().toLowerCase();
+    const command = args.shift().toString().toLowerCase();
 
     const randomXP = Math.floor(Math.random() * 25) + 1;
     const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
@@ -35,29 +35,23 @@ client.on('message', async message =>{
     }
 
 
-    if (command === '$salade'){
-        client.commands.get('salade').execute(message, args);
-    }
-    else if (command == '$kk'){
+    if (command == 'kk'){
         client.commands.get('kk').run(message, args)
     }
     else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
     }
-    else if(command == '$catnoir'){
-        client.commands.get('catnoir').execute(message, args);
-    }
-    else if(command == '$rank'){
+    else if(command == 'rank'){
         client.commands.get('pog').run(client, message, args);
     }
-    else if(command == '$kiss') {
+    else if(command == 'kiss') {
         client.commands.get('kiss').run(client, message, args);
     }
-    else if(command == '$kyenna') {
+    else if(command == 'kyenna') {
         client.commands.get('kyenna').run(client, message , args);
     }
 
-    else if (command == '$lb' || command == 'leaderboard') {
+    else if (command == 'lb' || command == 'leaderboard') {
         const rawLeaderboard = await levels.fetchLeaderboard(message.guild.id, 10)
         const leaderboard = await levels.computeLeaderboard(client, rawLeaderboard)
         const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}`);
