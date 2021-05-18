@@ -27,15 +27,6 @@ client.on('message', async message =>{
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toString().toLowerCase();
 
-    if (message.guild.process.env.PLANTAGE)
-    const randomXP = Math.floor(Math.random() * 25) + 1;
-    const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
-    if (hasLeveledUp) {
-        const user = await levels.fetch(message.author.id, message.guild.id);
-        message.channel.send(`je bent level omhoog manbro! je bent nu level ${user.level}!`);
-    }
-
-
     if (command == 'kk'){
         client.commands.get('kk').run(message, args)
     }
@@ -57,6 +48,14 @@ client.on('message', async message =>{
         const leaderboard = await levels.computeLeaderboard(client, rawLeaderboard)
         const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}`);
         message.channel.send(`${lb.join("\n\n")}`)
+    }
+
+    if (message.guild.process.env.PLANTAGE) return;
+    const randomXP = Math.floor(Math.random() * 25) + 1;
+    const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
+    if (hasLeveledUp) {
+        const user = await levels.fetch(message.author.id, message.guild.id);
+        message.channel.send(`je bent level omhoog manbro! je bent nu level ${user.level}!`);
     }
 })
 
