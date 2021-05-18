@@ -50,7 +50,7 @@ client.on('message', async message =>{
         message.channel.send(`${lb.join("\n\n")}`)
     }
 
-    if (message.guild.process.env.PLANTAGE) return;
+    if (message.guild(process.env.PLANTAGE)) return;
     const randomXP = Math.floor(Math.random() * 25) + 1;
     const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
