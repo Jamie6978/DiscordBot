@@ -6,6 +6,7 @@ const PREFIX = '$'
 const fs = require('fs');
 const mongo = require('mongoose');
 const levels = require('discord-xp');
+const catnoir = require('./commands/catnoir')
 const client = new Discord.Client({disableEveryone: true })
 client.login(process.env.TOKEN)
 
@@ -42,6 +43,9 @@ client.on('message', async message =>{
     else if(command == 'kyenna') {
         client.commands.get('kyenna').run(client, message , args);
     }
+    else if (command == 'catnoir') {
+        client.commands.get(catnoir).run(client, args);
+       }
 
     else if (command == 'lb' || command == 'leaderboard') {
         const rawLeaderboard = await levels.fetchLeaderboard(message.guild.id, 10)
@@ -49,6 +53,7 @@ client.on('message', async message =>{
         const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}`);
         message.channel.send(`${lb.join("\n\n")}`)
     }
+
 
     if ((message.guild) = (process.env.PLANTAGE)) return;
     const randomXP = Math.floor(Math.random() * 25) + 1;
@@ -66,7 +71,7 @@ y.addListener("data", res => {
 })
 
 client.on('ready', () => {
-    client.user.setActivity('Jade die schreeuwt in het washok', {type: 'LISTENING' })
+    client.user.setActivity('je moeder', {type: 'LISTENING' })
 });
 
 
