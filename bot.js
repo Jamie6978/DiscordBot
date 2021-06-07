@@ -44,7 +44,7 @@ client.on('message', async message =>{
         client.commands.get('kyenna').run(client, message , args);
     }
     else if (command == 'catnoir') {
-        client.commands.get(catnoir).run(client, message, args);
+        client.commands.get('catnoir').run(client, message, args);
        }
 
     else if (command == 'lb' || command == 'leaderboard') {
