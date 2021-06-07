@@ -14,7 +14,6 @@ module.exports =  {
             }
        
             var url = "https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags=" + argR;
-            console.log(url);
             https.get(url, function(res) {
               var body = "";
        
