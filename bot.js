@@ -35,7 +35,7 @@ client.on('message', async message =>{
         const user = await levels.fetch(message.author.id, message.guild.id);
         message.channel.send(`je bent level omhoog manbro! je bent nu level ${user.level}!`);
     }
-    if(!message.startsWith(PREFIX)) return;
+    if (!message.content.startsWith(PREFIX)) return;
     if (command == 'kk'){
         client.commands.get('kk').run(message, args)
     }
