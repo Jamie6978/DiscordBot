@@ -30,7 +30,6 @@ client.on('message', async message =>{
 
 
 
-    if ((message.guild) = (process.env.PLANTAGE)) return;
     const randomXP = Math.floor(Math.random() * 25) + 1;
     const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
