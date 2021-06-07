@@ -8,7 +8,7 @@ module.exports =  {
        
         try {
           var argR = "";
-          if (message.channel.nsfw) {
+          if (!message.author.bot) {
             if (args[0] != undefined) {
               argR = args;
             }
