@@ -54,7 +54,7 @@ client.on('message', async message =>{
     else if (command == 'catnoir') {
         client.commands.get('catnoir').run(client, message, args);
     }
-    else if (command == 'r34') {
+    else if (command == 'rule34') {
         client.commands.get('rule34').run(client, message, args);
     }
 
