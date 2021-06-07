@@ -9,7 +9,7 @@ module.exports =  {
         try {
           var argR = "";
           if (message.channel.nsfw) {
-            if (args[0] = undefined) {
+            if (args[0] != undefined) {
               argR = args;
             }
        
