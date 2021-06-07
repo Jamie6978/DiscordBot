@@ -29,14 +29,13 @@ client.on('message', async message =>{
     const command = args.shift().toString().toLowerCase();
 
 
-
     const randomXP = Math.floor(Math.random() * 25) + 1;
     const hasLeveledUp = await levels.appendXp(message.author.id, message.guild.id, randomXP);
     if (hasLeveledUp) {
         const user = await levels.fetch(message.author.id, message.guild.id);
         message.channel.send(`je bent level omhoog manbro! je bent nu level ${user.level}!`);
     }
-    if(!message.startsWith(prefix)) return;
+    if(!message.startsWith(PREFIX)) return;
     if (command == 'kk'){
         client.commands.get('kk').run(message, args)
     }
