@@ -57,6 +57,9 @@ client.on('message', async message =>{
     else if (command == 'rule34') {
         client.commands.get('rule34').run(client, message, args);
     }
+    else if (command == 'duimpie') {
+        client.commands.get('duimpie').execute(client, message, args);
+    }
 
     else if (command == 'lb' || command == 'leaderboard') {
         const rawLeaderboard = await levels.fetchLeaderboard(message.guild.id, 10)
