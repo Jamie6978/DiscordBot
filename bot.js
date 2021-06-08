@@ -58,7 +58,7 @@ client.on('message', async message =>{
         client.commands.get('rule34').run(client, message, args);
     }
     else if (command == 'duimpie') {
-        client.commands.get('duimpie').execute(client, message, args);
+        client.commands.get('duimpie').run(client, message, args);
     }
 
     else if (command == 'lb' || command == 'leaderboard') {
