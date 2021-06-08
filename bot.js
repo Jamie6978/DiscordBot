@@ -84,6 +84,6 @@ client.on('ready', () => {
 
 
 
-
+//hoi//
 
 
