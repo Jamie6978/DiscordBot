@@ -1,7 +1,7 @@
 module.exports = {
     name: 'duimpie',
-    description: "wap",
-    execute(message, args){
+
+    run: async(client, message, args) => {
         message.channel.send(process.env.duimpie)
     }
 }
