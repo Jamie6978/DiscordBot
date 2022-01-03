@@ -18,4 +18,4 @@ module.exports = {
             message.channel.send('Je hebt geen toegang tot dit commando.');
         }
     }
-    }
+    };

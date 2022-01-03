@@ -43,7 +43,7 @@ client.on('message', async message =>{
         client.commands.get('salade').run(message, args);
     }
     else if (command == 'delrole') {
-        client.commands.get('delrole').run(message, arguments);
+        client.commands.get('delrole').callback(message, arguments);
     }
     else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
