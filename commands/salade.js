@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'salade',
-    description: "dit is salade",
-    execute(message, args){
+    name: 'kk',
+    description: "kanker",
+    run: async(message, args) => {
         message.channel.send(process.env.christiaanmusic)
     }
 }

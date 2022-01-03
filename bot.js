@@ -39,6 +39,9 @@ client.on('message', async message =>{
     if (command == 'kk'){
         client.commands.get('kk').run(message, args)
     }
+    else if (command == 'salade') {
+        client.commands.get('salade').run(message, args);
+    }
     else if (command == 'av'){
         client.commands.get('av').run(client, message, args);
     }
@@ -62,9 +65,6 @@ client.on('message', async message =>{
     }
     else if (command == 'spotify') {
         client.commands.get('spotify').run(client, message, args);
-    }
-    else if (command == 'salade') {
-        client.commands.get('salade').run(client, message, args);
     }
 
     else if (command == 'lb' || command == 'leaderboard') {
