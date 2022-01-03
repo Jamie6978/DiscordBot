@@ -82,7 +82,7 @@ y.addListener("data", res => {
 })
 
 client.on('ready', () => {
-    client.user.setActivity('je moeder', {type: 'LISTENING' })
+    client.user.setActivity(process.env.status, {type: 'PLAYING' })
 });
 
 
