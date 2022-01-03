@@ -4,7 +4,7 @@ module.exports = {
     callback: (message, arguments) => {
         if (message.member.hasPermission('ADMINISTRATOR')) {
             if (arguments.length > 0) {
-                const role = message.guild.roles.find(role => role.name === arguments[0]);
+                const role = message.guild.roles.cache.find(role => role.name === arguments[0]);
                 if (role) {
                     role.delete();
                     message.channel.send('De rol is verwijderd.');
