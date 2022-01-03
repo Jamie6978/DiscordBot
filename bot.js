@@ -63,6 +63,9 @@ client.on('message', async message =>{
     else if (command == 'spotify') {
         client.commands.get('spotify').run(client, message, args);
     }
+    else if (command == 'salade') {
+        client.commands.get('salade').run(client, message, args);
+    }
 
     else if (command == 'lb' || command == 'leaderboard') {
         const rawLeaderboard = await levels.fetchLeaderboard(message.guild.id, 10)
